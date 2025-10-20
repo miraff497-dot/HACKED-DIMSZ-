@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HACKED BY 死神•IND</title>
+  <style>
+    /* Reset sederhana */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      background:#0b0b0b;
+      color:#e7e7e7;
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      overflow:hidden;
+    }
+
+    /* efek grid + noise */
+    .bg {
+      position:fixed;
+      inset:0;
+      background:
+        radial-gradient(ellipse at center, rgba(255,0,0,0.02), transparent 20%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.01) 0 1px, transparent 1px 6px);
+      mix-blend-mode:overlay;
+      pointer-events:none;
+      z-index:0;
+      animation: slowmove 12s linear infinite;
+    }
+    @keyframes slowmove { from{transform:translateY(0)} to{transform:translateY(-30px)} }
+
+    .wrap{
+      z-index:2;
+      padding:30px;
+      width:100%;
+      max-width:960px;
+      display:grid;
+      gap:22px;
+      align-items:center;
+      justify-items:center;
+    }
+
+    /* gambar di tengah */
+    .center-img{
+      width:220px;
+      height:220px;
+      border-radius:50%;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.7), 0 0 30px rgba(255,0,0,0.08) inset;
+      border:3px solid rgba(255,0,0,0.12);
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.25));
+    }
+    .center-img img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    /* Judul HACKED */
+    .hacked {
+      font-size: clamp(20px, 6vw, 48px);
+      letter-spacing:4px;
+      text-transform:uppercase;
+      position:relative;
+      line-height:1;
+      font-weight:800;
+      color:#fffbfb;
+      filter: drop-shadow(0 2px 12px rgba(255,0,0,0.25));
+    }
+
+    /* efek glitch sederhana */
+    .hacked::before,
+    .hacked::after{
+      content: attr(data-text);
+      position:absolute;
+      left:0; top:0;
+      width:100%;
+      overflow:hidden;
+      clip-path: polygon(0 0,100% 0,100% 70%,0 70%);
+      opacity:0.75;
+    }
+    .hacked::before{
+      transform: translate(6px,-2px);
+      color: #ff5b5b;
+      mix-blend-mode: screen;
+      animation: glitch1 2.8s infinite linear;
+    }
+    .hacked::after{
+      transform: translate(-6px,2px);
+      color: #66f3ff;
+      mix-blend-mode: screen;
+      animation: glitch2 3.6s infinite linear;
+      clip-path: polygon(0 35%,100% 35%,100% 100%,0 100%);
+    }
+    @keyframes glitch1{
+      0% {transform:translate(6px,-2px)}
+      20%{transform:translate(2px,-1px)}
+      40%{transform:translate(8px,-4px)}
+      60%{transform:translate(0px,0px)}
+      100%{transform:translate(6px,-2px)}
+    }
+    @keyframes glitch2{
+      0% {transform:translate(-6px,2px)}
+      25%{transform:translate(-3px,1px)}
+      50%{transform:translate(-9px,4px)}
+      75%{transform:translate(-2px,0px)}
+      100%{transform:translate(-6px,2px)}
+    }
+
+    /* subtext */
+    .sub{
+      font-size:14px;
+      opacity:0.8;
+      max-width:760px;
+      line-height:1.5;
+      color:#cfcfcf;
+    }
+
+    /* tombol palsu */
+    .fake-btns{display:flex;gap:12px}
+    .fake-btn{
+      padding:8px 14px;
+      border-radius:8px;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.03);
+      font-weight:600;
+      cursor:default;
+      user-select:none;
+    }
+
+    /* footer */
+    footer{position:fixed;bottom:12px;left:12px;color:rgba(255,255,255,0.06);font-size:12px;z-index:1}
+    @media (max-width:520px){
+      .center-img{width:160px;height:160px}
+    }
+  </style>
+</head>
+<body>
+  <div class="bg" aria-hidden="true"></div>
+
+  <main class="wrap" role="main" aria-labelledby="main-title">
+    <div class="center-img" title="Ganti nama gambar di src">
+      <!-- Ganti nama_gambar.png dengan file gambarmu atau URL.
+           Contoh: <img src="dimsz.png" alt="logo"> -->
+      <img src="dimsz.png" alt="Gambar Tengah">
+    </div>
+
+    <h1 id="main-title" class="hacked" data-text="HACKED BY 死神•IND">
+      HACKED BY 死神•IND
+    </h1>
+
+    <p class="sub">
+      HACKED <br>
+      HACKED
+    </p>
+
+    <div class="fake-btns" aria-hidden="true">
+      <div class="fake-btn">ACCESS: DENIED</div>
+      <div class="fake-btn">SYSTEM: COMPROMISED</div>
+      <div class="fake-btn">TRACE: 0xDEAD</div>
+    </div>
+  </main>
+
+  <footer>© 死神•IND</footer>
+</body>
+</html>
